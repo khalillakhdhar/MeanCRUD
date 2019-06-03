@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+            <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="messageService.selectedMessage._id">
+              <div class="row">
+                <div class=" col s12">
+
+
+
+                <table>
+                  <tr><td colspan="3" align="center"><h4>Veuillez choisir une template</h4></td></tr>
+                  <tr><td >template</td><td>texte</td><td>Action</td></tr>
+                  <tr><td>template1</td><td name="t1">perte de poste HT %POSTE%"</td><td><a  (click)="template1()">choisir</a></td></tr>
+                  <tr><td>template2</td><td>perte de la  ligne entre  %POSTE1% et %POSTE2%</td><td><a (click)="template2()">choisir</a></td></tr>
+
+
+                </table>
+</div>
+
+                <!--div class="select-dropdown col s12">
+               <select  [(ngModel)]='template' name="template" >
+                    <option value="perte de poste HT %POSTE%">template1</option>
+                    <option value="perte de la  ligne entre  %POSTE1% et %POSTE2%">template2</option>
+                  </select>
+                  <label>Template:</label>
+                </div-->
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="titre" #name="ngModel" [(ngModel)]="messageService.selectedMessage.titre" placeholder="Titre ici"><label>Titre :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea  name="text" #name="ngModel" [(ngModel)]="messageService.selectedMessage.text" placeholder="Texte ici"></textarea>                   <label>texte :</label>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="telephone" #name="ngModel" [(ngModel)]="messageService.selectedMessage.telephone" placeholder="Numéro de tel ici">
+                  <label>telephone:</label>
+                </div>
+              </div>
+              
+                  
+              
+              
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(messageForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!messageForm.valid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Titre</th>
+                      <th>tel</th>
+                      <th>texte</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let emp of messageService.messages">
+                    <td>{{emp.titre}}</td>
+                    <td>{{emp.telephone}}</td>
+                    <td>{{emp.text}}</td>
+                    <td>
+                       
+                        <a class="action-btn" (click)="onDelete(emp._id,messageForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
