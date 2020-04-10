@@ -1,6 +1,7 @@
 //integration de express
 const express = require('express');
 const bodyParser = require('body-parser');
+//permet la liaison à angular
 const cors = require('cors');
 
 const { mongoose } = require('./db.js');
