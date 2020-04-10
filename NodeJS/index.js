@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 //permet la liaison à angular
 const cors = require('cors');
-
+//connexion
 const { mongoose } = require('./db.js');
 var employeeController = require('./controllers/employeeController.js');
 var messageController = require('./controllers/messageController.js');
