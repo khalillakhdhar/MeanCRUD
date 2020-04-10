@@ -1,6 +1,6 @@
 //importation de mongoose
 const mongoose = require('mongoose');
-
+//connexion
 mongoose.connect('mongodb://localhost:27017/mydb', (err) => {
     if (!err)
         console.log('MongoDB connection succeeded.');
