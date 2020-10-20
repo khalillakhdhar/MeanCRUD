@@ -3,3 +3,4 @@ This is a MEAN Stack Demo Project Showing CRUD Operations Insert Update Delete a
 
 ###### Before Running this Project
 Install npm packages using 'npm install' command from both Angular and NodeJS Project Folder. 
+(you need mongodb installed on your device)
